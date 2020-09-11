@@ -1,0 +1,52 @@
+.container {
+    width: 1000px;
+    margin: 30px auto;
+    background-color: #ddd;
+
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: 250px 150px;
+    grid-gap: 30px;
+
+    // alinear tracks
+    /* justify-content: ;//horizaontalmente
+    align-content: ;//verticalmente */
+
+
+    // propiedades para modificar las cuadriculas implicitas
+    grid-auto-rows: 80px;
+    // permite en que direction se van a mantener las cuadriculas implicitas
+    grid-auto-flow: row;
+    // modificar su tamaño
+    grid-auto-columns: .5fr;
+
+
+    // alinear
+    align-items: center; //verticalmente
+    justify-items: center; //Horizontalmente
+
+    .item {
+        padding: 20px;
+        color: white;
+        font-family: sans-serif;
+        font-size: 30px;
+        background-color: orangered;
+
+        &--4 {
+            background-color: crimson;
+            grid-row: 2 / span 3;
+
+            // alineacion de un item
+            align-self: start; //verticalmente
+            justify-self: start; //horizontalmente
+        }
+
+        &--7 {
+            background-color: palevioletred;
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+// las cuadriulas que nosotros creamos son explicitas
+// las cuadriculas que se añaden automaticamente se llaman implicitas
